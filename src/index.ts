@@ -725,7 +725,12 @@ function FlatpickrInstance(
       "aria-label",
       self.formatDate(date, self.config.ariaDateFormat)
     );
-    dayElement.setAttribute("data-date", self.formatDate(date, "Y-m-d"));
+    dayElement.setAttribute(
+        "data-date",
+        self.formatDate(date, "Y-m-d")
+    );
+    if (self.config.minDate && compareDates(date, self.config.minDate, true) < 0)
+      dayElement.classList.add("flatpickr-below-minDate");
 
     if (
       className.indexOf("hidden") === -1 &&
