@@ -12,7 +12,7 @@ export type DateRangeLimit<D = DateOption> = { from: D; to: D };
 export type DateLimit<D = DateOption> =
   | D
   | DateRangeLimit<D>
-  | ((date: Date) => boolean);
+  | ((date: Date, self: Instance) => boolean);
 
 export type Hook = (
   dates: Date[],

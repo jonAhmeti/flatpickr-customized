@@ -1615,7 +1615,7 @@ function FlatpickrInstance(
 
       if (
         typeof d === "function" &&
-        d(dateToCheck) // disabled by function
+        d(dateToCheck, self) // disabled by function
       )
         return bool;
       else if (
